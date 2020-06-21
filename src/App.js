@@ -1,15 +1,23 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import { GlobalStyle } from './styles';
+import MemoApp from './components/templates/Memo';
 
 const Container = styled.div``;
 
-function App() {
-  return (
-    <Container>
-      <GlobalStyle />
-    </Container>
-  );
+class App extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+      <Container>
+        <GlobalStyle />
+        <MemoApp />
+      </Container>
+    );
+  }
 }
 
 export default App;
