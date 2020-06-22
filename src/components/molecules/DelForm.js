@@ -10,6 +10,7 @@ const Form = styled.form``;
 
 const Select = styled.select`
   position: relative;
+  width: 115px;
   outline: none;
   border: none;
   height: 35px;
@@ -24,7 +25,7 @@ const Btn = styled.input`
   font-size: 14px;
   padding: 2px 10px;
   margin-left: 15px;
-  margin-right: 10px;
+  margin-right: 35px;
   box-shadow: ${shadow.conve};
   &:active {
     box-shadow: ${shadow.concave};
@@ -61,7 +62,7 @@ class DelForm extends Component {
     let n = 0;
     let items = this.props.data.map((value) => (
       <option key={n} value={n++}>
-        {value.message.substring(0, 10)}
+        {value.message}
       </option>
     ));
 

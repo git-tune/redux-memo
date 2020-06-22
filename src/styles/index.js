@@ -16,6 +16,9 @@ export const device = {
 };
 
 export const GlobalStyle = createGlobalStyle`
+    html {
+      font-family: 'Lato', 'Lucida Grande', 'Lucida Sans Unicode', Tahoma, Sans-Serif;
+    }
     *, *:before, *:after {
        box-sizing: border-box;
        padding: 0;

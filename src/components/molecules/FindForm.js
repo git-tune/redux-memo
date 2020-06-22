@@ -10,11 +10,11 @@ const Input = styled.input`
   width: 100px;
   height: 35px;
   font-size: 16px;
-  padding: 3px;
+  padding: 10px 15px;
   margin: 5px 0;
   margin-left: 20px;
   box-shadow: ${shadow.concave};
-  transition: 1s;
+  transition: 0.5s;
   &:focus {
     box-shadow: ${shadow.focus_concave};
 `;

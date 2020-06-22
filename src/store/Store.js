@@ -1,7 +1,7 @@
 import { createStore } from 'redux';
 
 const initData = {
-  data: [{ message: 'Studying React, Redux', created: new Date() }],
+  data: [],
   message: 'please type message:',
   mode: 'default',
   fdata: [],
@@ -25,13 +25,24 @@ export const memoReducer = (state = initData, action) => {
 // Reduce Action
 
 const addReduce = (state, action) => {
+  let d = new Date();
+  let f =
+    d.getMonth() +
+    1 +
+    '/' +
+    d.getDate() +
+    ' ' +
+    d.getHours() +
+    ':' +
+    d.getMinutes();
+
   let data = {
     message: action.message,
-    created: new Date(),
+    created: f,
   };
 
   let newdata = state.data.slice();
-  newdata.unshift(data);
+  newdata.push(data);
 
   return {
     data: newdata,
