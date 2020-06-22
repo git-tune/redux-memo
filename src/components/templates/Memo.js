@@ -13,7 +13,12 @@ const Container = styled.div`
 
 const Title = styled.h1`
   color: ${colors.black};
-  margin: 50px 0 30px 0;
+  margin: 50px 0 0 0;
+`;
+
+const SubTitle = styled.p`
+  font-size: 15px;
+  margin-bottom: 30px;
 `;
 
 const Table = styled.table`
@@ -24,6 +29,10 @@ const MemoApp = () => {
   return (
     <Container>
       <Title>Redux Memo</Title>
+      <SubTitle>
+        This App is to confirm Redux-Persist setting for achieving persistence
+        of App-contents in React
+      </SubTitle>
       <AddForm />
       <Table>
         <tbody>
