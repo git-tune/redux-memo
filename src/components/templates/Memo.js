@@ -1,26 +1,29 @@
 import React from 'react';
 import styled from 'styled-components';
-import Memo from '../organisms/Memo';
-import AddForm from '../organisms/AddForm';
-import FindForm from '../organisms/FindForm';
-import DelForm from '../organisms/DelForm';
+import Memo from '../molecules/Memo';
+import AddForm from '../molecules/AddForm';
+import FindForm from '../molecules/FindForm';
+import DelForm from '../molecules/DelForm';
+import { colors } from '../../styles/variable';
 
 const Container = styled.div`
+  background: ${colors.primary};
   text-align: center;
+`;
+
+const Title = styled.h1`
+  color: ${colors.black};
+  margin: 50px 0 30px 0;
 `;
 
 const Table = styled.table`
-  margin: 0 auto;
-`;
-
-const MemoList = styled.div`
-  text-align: center;
+  margin: 5px auto 20px auto;
 `;
 
 const MemoApp = () => {
   return (
     <Container>
-      <h1>Memo</h1>
+      <Title>Redux Memo</Title>
       <AddForm />
       <Table>
         <tbody>
@@ -34,9 +37,7 @@ const MemoApp = () => {
           </tr>
         </tbody>
       </Table>
-      <MemoList>
-        <Memo />
-      </MemoList>
+      <Memo />
     </Container>
   );
 };

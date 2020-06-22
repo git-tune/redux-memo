@@ -1,20 +1,35 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
-import { findMemo } from '../Store';
+import { findMemo } from '../../store/Store';
+import { shadow } from '../../styles/variable';
 
 const Form = styled.form``;
 
 const Input = styled.input`
-  font-size: 14pt;
-  color: #006;
-  padding: 0;
+  width: 100px;
+  height: 35px;
+  font-size: 16px;
+  padding: 3px;
+  margin: 5px 0;
+  margin-left: 20px;
+  box-shadow: ${shadow.concave};
+  transition: 1s;
+  &:focus {
+    box-shadow: ${shadow.focus_concave};
 `;
 
 const Btn = styled.input`
-  font-size: 12pt;
-  color: #006;
-  padding: 1px 10px;
+  width: 80px;
+  height: 30px;
+  font-size: 14px;
+  padding: 2px 10px;
+  margin-left: 15px;
+  box-shadow: ${shadow.conve};
+  &:active {
+    box-shadow: ${shadow.concave};
+    transform: scale(0.99, 0.99);
+  }
 `;
 
 class FindForm extends Component {
@@ -45,7 +60,6 @@ class FindForm extends Component {
       <Form onSubmit={this.doAction}>
         <Input
           type='text'
-          size='10'
           onChange={this.doChange}
           value={this.state.message}
         />

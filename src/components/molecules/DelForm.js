@@ -1,23 +1,35 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
-import { deleteMemo } from '../Store';
+import { deleteMemo } from '../../store/Store';
+import { shadow } from '../../styles/variable';
 
 const Container = styled.div``;
 
 const Form = styled.form``;
 
 const Select = styled.select`
-  font-size: 12pt;
-  color: #006;
-  padding: 1px;
-  margin: 5px 0;
+  position: relative;
+  outline: none;
+  border: none;
+  height: 35px;
+  border-radius: 10px;
+  padding-left: 5px;
+  box-shadow: ${shadow.concave};
 `;
 
 const Btn = styled.input`
-  font-size: 10pt;
-  color: #006;
+  width: 80px;
+  height: 30px;
+  font-size: 14px;
   padding: 2px 10px;
+  margin-left: 15px;
+  margin-right: 10px;
+  box-shadow: ${shadow.conve};
+  &:active {
+    box-shadow: ${shadow.concave};
+    transform: scale(0.99, 0.99);
+  }
 `;
 
 class DelForm extends Component {

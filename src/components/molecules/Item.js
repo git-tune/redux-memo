@@ -1,23 +1,29 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
+import { colors, shadow } from '../../styles/variable';
 
-const Tr = styled.tr``;
+const Tr = styled.tr`
+  height: 40px;
+  color: ${colors.black};
+`;
 
 const Th = styled.th`
-  font-size: 14pt;
-  background: blue;
-  color: white;
-  padding: 5px 10px;
-  width: 50px;
+  width: 70px;
+  box-shadow: ${shadow.concave}, ${shadow.conve};
 `;
 
 const Td = styled.td`
-  background: white;
-  color: darkblue;
-  padding: 5px 10px;
-  border: 1px solid lightblue;
-  minwidth: 300px;
+  min-width: 250px;
+  max-width: auto;
+  text-align: left;
+  padding-left: 10px;
+  box-shadow: ${shadow.concave}, ${shadow.conve};
+`;
+
+const Time = styled.td`
+  width: 100px;
+  box-shadow: ${shadow.concave}, ${shadow.conve};
 `;
 
 class Item extends Component {
@@ -29,7 +35,7 @@ class Item extends Component {
       <Tr>
         <Th>No. {this.props.index}</Th>
         <Td>{this.props.value.message}</Td>
-        <Td>{f}</Td>
+        <Time>{f}</Time>
       </Tr>
     );
   }

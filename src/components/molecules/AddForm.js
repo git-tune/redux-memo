@@ -1,25 +1,37 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
-import { addMemo } from '../Store';
+import { addMemo } from '../../store/Store';
+import { shadow } from '../../styles/variable';
 
 const Container = styled.div``;
-
-const P = styled.p``;
 
 const Form = styled.form``;
 
 const Input = styled.input`
+  width: 330px;
+  height: 35px;
   font-size: 16px;
-  color: #006;
-  padding: 1px;
+  padding: 3px;
   margin: 5px 0;
+  box-shadow: ${shadow.concave};
+  transition: 1s;
+  &:focus {
+    box-shadow: ${shadow.focus_concave};
+  }
 `;
 
 const Btn = styled.input`
+  width: 80px;
+  height: 30px;
   font-size: 14px;
-  color: #006;
   padding: 2px 10px;
+  margin-left: 15px;
+  box-shadow: ${shadow.conve};
+  &:active {
+    box-shadow: ${shadow.concave};
+    transform: scale(0.99, 0.99);
+  }
 `;
 
 class AddForm extends Component {
@@ -50,11 +62,9 @@ class AddForm extends Component {
   render() {
     return (
       <Container>
-        <P>{this.props.message}</P>
         <Form onSubmit={this.doAction}>
           <Input
             type='text'
-            size='40'
             onChange={this.doChange}
             value={this.state.message}
             required

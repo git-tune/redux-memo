@@ -1,8 +1,8 @@
 import { createStore } from 'redux';
 
 const initData = {
-  data: [],
-  message: '',
+  data: [{ message: 'Studying React, Redux', created: new Date() }],
+  message: 'please type message:',
   mode: 'default',
   fdata: [],
 };

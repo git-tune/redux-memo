@@ -20,6 +20,7 @@ export const GlobalStyle = createGlobalStyle`
        box-sizing: border-box;
        padding: 0;
        margin: 0; 
+       background: ${colors.primary};
     }
     li {
         list-style-type: none;
@@ -30,5 +31,11 @@ export const GlobalStyle = createGlobalStyle`
     }
     td {
         width: 250px;
+    }
+    input {
+      background: ${colors.primary};
+      border: none;
+      outline: none;
+      border-radius: 10px;
     }
 `;
