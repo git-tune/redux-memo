@@ -23,7 +23,7 @@ export const GlobalStyle = createGlobalStyle`
        box-sizing: border-box;
        padding: 0;
        margin: 0; 
-       background: ${colors.primary};
+       background: ${colors.main};
     }
     li {
         list-style-type: none;
@@ -36,7 +36,8 @@ export const GlobalStyle = createGlobalStyle`
         width: 250px;
     }
     input {
-      background: ${colors.primary};
+      font-family: 'Lato', 'Lucida Grande', 'Lucida Sans Unicode', Tahoma, Sans-Serif;
+      background: ${colors.main};
       border: none;
       outline: none;
       border-radius: 10px;

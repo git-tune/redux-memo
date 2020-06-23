@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { addMemo } from '../../store/Store';
-import { shadow } from '../../styles/variable';
+import { colors, shadow } from '../../styles/variable';
 
 const Container = styled.div``;
 
@@ -24,6 +24,8 @@ const Input = styled.input`
 const Btn = styled.input`
   width: 80px;
   height: 30px;
+  color: white;
+  background: ${colors.primary};
   font-size: 14px;
   padding: 2px 10px;
   margin-left: 15px;

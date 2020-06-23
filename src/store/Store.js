@@ -41,12 +41,12 @@ const addReduce = (state, action) => {
     created: f,
   };
 
-  let newdata = state.data.slice();
-  newdata.push(data);
+  let _newdata = state.data.slice();
+  let newdata = [..._newdata, data];
 
   return {
     data: newdata,
-    message: 'Added!',
+    message: `Added "${data.message}"`,
     mode: 'default',
     fdata: [],
   };
@@ -70,11 +70,11 @@ const findReduce = (state, action) => {
 };
 
 const deleteReduce = (state, action) => {
-  let newdata = state.data.slice();
-  newdata.splice(action.index, 1);
+  let _newdata = state.data.slice();
+  let newdata = _newdata.filter((x) => x !== _newdata[action.index]);
   return {
     data: newdata,
-    message: 'delete "' + action.index + '":',
+    message: `deleted "${action.message}"`,
     mode: 'delete',
     fdata: [],
   };
@@ -89,9 +89,10 @@ export const addMemo = (text) => {
   };
 };
 
-export const deleteMemo = (num) => {
+export const deleteMemo = (text, num) => {
   return {
     type: 'DELETE',
+    message: text,
     index: num,
   };
 };

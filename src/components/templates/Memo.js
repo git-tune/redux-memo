@@ -3,11 +3,11 @@ import styled from 'styled-components';
 import Memo from '../molecules/Memo';
 import AddForm from '../molecules/AddForm';
 import FindForm from '../molecules/FindForm';
-import DelForm from '../molecules/DelForm';
+import HistoryForm from '../molecules/HistoryForm';
 import { colors } from '../../styles/variable';
 
 const Container = styled.div`
-  background: ${colors.primary};
+  background: ${colors.main};
   text-align: center;
 `;
 
@@ -29,10 +29,7 @@ const MemoApp = () => {
   return (
     <Container>
       <Title>Redux Memo</Title>
-      <SubTitle>
-        This App is to confirm Redux-Persist setting for achieving persistence
-        of App-contents in React
-      </SubTitle>
+      <SubTitle>This App for studying Redux-Persist</SubTitle>
       <AddForm />
       <Table>
         <tbody>
@@ -41,7 +38,7 @@ const MemoApp = () => {
               <FindForm />
             </td>
             <td>
-              <DelForm />
+              <HistoryForm />
             </td>
           </tr>
         </tbody>

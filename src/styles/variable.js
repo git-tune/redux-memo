@@ -1,8 +1,9 @@
 export const colors = {
-  primary: '#ecf0f3',
+  main: '#ecf0f3',
   white: 'white',
   shadow: '#d1d9e6',
-  weak_black: '#546778',
+  primary: '#60d2b6',
+  danger: '#ee675d',
 };
 
 export const shadow = {
