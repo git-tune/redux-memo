@@ -63,7 +63,7 @@ const findReduce = (state, action) => {
 
   return {
     data: state.data,
-    message: 'find "' + f + '":',
+    message: 'find "' + f + '"',
     mode: 'find',
     fdata: fdata,
   };

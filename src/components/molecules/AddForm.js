@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { addMemo } from '../../store/Store';
 import { colors, shadow } from '../../styles/variable';
+import { device } from '../../styles/index';
 
 const Container = styled.div``;
 
@@ -18,6 +19,9 @@ const Input = styled.input`
   transition: 0.5s;
   &:focus {
     box-shadow: ${shadow.focus_concave};
+  }
+  @media ${device.mobile} {
+    width: 60%;
   }
 `;
 

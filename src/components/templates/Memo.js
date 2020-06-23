@@ -23,6 +23,7 @@ const SubTitle = styled.p`
 
 const Table = styled.table`
   margin: 5px auto 20px auto;
+  }
 `;
 
 const MemoApp = () => {

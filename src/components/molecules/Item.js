@@ -3,11 +3,13 @@ import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { colors, shadow } from '../../styles/variable';
 import { deleteMemo } from '../../store/Store';
+import { device } from '../../styles/index';
 
 const Tr = styled.tr`
   height: 40px;
   color: ${colors.black};
   font-size: 14px;
+  }
 `;
 
 const Th = styled.th`
@@ -22,6 +24,9 @@ const MessageTd = styled.td`
   text-align: left;
   padding: 0 10px;
   box-shadow: ${shadow.concave}, ${shadow.conve};
+  @media ${device.mobile} {
+    min-width: auto;
+  }
 `;
 
 const DayTd = styled.td`
@@ -45,6 +50,9 @@ const Btn = styled.a`
   &:active {
     box-shadow: ${shadow.concave};
     font-size: 0.84rem;
+  }
+  @media ${device.mobile} {
+    margin: 3px 5px;
   }
 `;
 

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { findMemo } from '../../store/Store';
 import { shadow } from '../../styles/variable';
+import { device } from '../../styles/index';
 
 const Form = styled.form``;
 
@@ -17,6 +18,11 @@ const Input = styled.input`
   transition: 0.5s;
   &:focus {
     box-shadow: ${shadow.focus_concave};
+  }
+  @media ${device.mobile} {
+    width: 90px;
+    margin-left: 10px;
+  }
 `;
 
 const Btn = styled.input`
@@ -29,6 +35,9 @@ const Btn = styled.input`
   &:active {
     box-shadow: ${shadow.concave};
     transform: scale(0.99, 0.99);
+  }
+  @media ${device.mobile} {
+    width: 50px;
   }
 `;
 
