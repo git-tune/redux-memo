@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
-import { colors, shadow } from '../../styles/variable';
-import { deleteMemo } from '../../store/Store';
-import { device } from '../../styles/index';
+import { colors, shadow } from '../styles/variable';
+import { deleteMemo } from '../actions/index';
+import { device } from '../styles/index';
 
 const Tr = styled.tr`
   height: 40px;

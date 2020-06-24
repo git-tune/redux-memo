@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
-import { device } from '../../styles/index';
+import { device } from '../styles/index';
 
 const Container = styled.div``;
 

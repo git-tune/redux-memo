@@ -2,7 +2,7 @@ import { createStore } from 'redux';
 
 const initData = {
   data: [],
-  message: 'please type message:',
+  message: 'Please type message:',
   mode: 'default',
   fdata: [],
 };
@@ -26,15 +26,8 @@ export const memoReducer = (state = initData, action) => {
 
 const addReduce = (state, action) => {
   let d = new Date();
-  let f =
-    d.getMonth() +
-    1 +
-    '/' +
-    d.getDate() +
-    ' ' +
-    d.getHours() +
-    ':' +
-    d.getMinutes();
+  let m = ('' + 0 + d.getMinutes()).slice(-2);
+  let f = d.getMonth() + 1 + '/' + d.getDate() + ' ' + d.getHours() + ':' + m;
 
   let data = {
     message: action.message,
@@ -63,7 +56,7 @@ const findReduce = (state, action) => {
 
   return {
     data: state.data,
-    message: 'find "' + f + '"',
+    message: 'Find "' + f + '"',
     mode: 'find',
     fdata: fdata,
   };
@@ -74,33 +67,9 @@ const deleteReduce = (state, action) => {
   let newdata = _newdata.filter((x) => x !== _newdata[action.index]);
   return {
     data: newdata,
-    message: `deleted "${action.message}"`,
+    message: `Deleted "${action.message}"`,
     mode: 'delete',
     fdata: [],
-  };
-};
-
-// Action Creater
-
-export const addMemo = (text) => {
-  return {
-    type: 'ADD',
-    message: text,
-  };
-};
-
-export const deleteMemo = (text, num) => {
-  return {
-    type: 'DELETE',
-    message: text,
-    index: num,
-  };
-};
-
-export const findMemo = (text) => {
-  return {
-    type: 'FIND',
-    find: text,
   };
 };
 

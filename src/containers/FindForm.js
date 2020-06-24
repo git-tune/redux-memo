@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
-import { findMemo } from '../../store/Store';
-import { shadow } from '../../styles/variable';
-import { device } from '../../styles/index';
+import { findMemo } from '../actions/index';
+import { shadow } from '../styles/variable';
+import { device } from '../styles/index';
 
 const Form = styled.form``;
 
