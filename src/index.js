@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import { PersistGate } from 'redux-persist/integration/react';
-import { memoReducer } from './store/Store';
+import { Reducer } from './reducers/index';
 import App from './App';
 
 // Redux-Rersist setting
@@ -17,7 +17,7 @@ const persistConfig = {
 
 // Rersist Reducer
 
-const persistedReducer = persistReducer(persistConfig, memoReducer);
+const persistedReducer = persistReducer(persistConfig, Reducer);
 
 // Store Persister
 

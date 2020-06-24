@@ -9,7 +9,7 @@ const initData = {
 
 // Reducer
 
-export const memoReducer = (state = initData, action) => {
+export const Reducer = (state = initData, action) => {
   switch (action.type) {
     case 'ADD':
       return addReduce(state, action);
@@ -73,4 +73,4 @@ const deleteReduce = (state, action) => {
   };
 };
 
-export default createStore(memoReducer);
+export default createStore(Reducer);
