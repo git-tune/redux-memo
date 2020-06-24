@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/redux-memo/static/js/main.86e7a61d.chunk.js",
-    "main.js.map": "/redux-memo/static/js/main.86e7a61d.chunk.js.map",
+    "main.js": "/redux-memo/static/js/main.59fa1ee3.chunk.js",
+    "main.js.map": "/redux-memo/static/js/main.59fa1ee3.chunk.js.map",
     "runtime-main.js": "/redux-memo/static/js/runtime-main.72a761ba.js",
     "runtime-main.js.map": "/redux-memo/static/js/runtime-main.72a761ba.js.map",
     "static/js/2.d3f6907f.chunk.js": "/redux-memo/static/js/2.d3f6907f.chunk.js",
     "static/js/2.d3f6907f.chunk.js.map": "/redux-memo/static/js/2.d3f6907f.chunk.js.map",
     "index.html": "/redux-memo/index.html",
-    "precache-manifest.882f4b520964f512779275d480a04484.js": "/redux-memo/precache-manifest.882f4b520964f512779275d480a04484.js",
+    "precache-manifest.9e0641e1594ea95b8edd0824093bc80f.js": "/redux-memo/precache-manifest.9e0641e1594ea95b8edd0824093bc80f.js",
     "service-worker.js": "/redux-memo/service-worker.js",
     "static/js/2.d3f6907f.chunk.js.LICENSE.txt": "/redux-memo/static/js/2.d3f6907f.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.72a761ba.js",
     "static/js/2.d3f6907f.chunk.js",
-    "static/js/main.86e7a61d.chunk.js"
+    "static/js/main.59fa1ee3.chunk.js"
   ]
 }
