@@ -28,7 +28,7 @@ const ButtonComponent = ({ type, onClick, children }) => {
   return React.createElement(component, { onClick }, children);
 };
 
-ButtonComponent.prototype = {
+ButtonComponent.prototype　= {
   type: PropTypes.string,
   onClick: PropTypes.func,
   children: PropTypes.elementType,

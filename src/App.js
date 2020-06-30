@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { GlobalStyle } from './styles';
-import MemoApp from './components/templates/Memo';
+import Top from './pages/Top';
 
 const Container = styled.div``;
 
@@ -10,7 +10,7 @@ class App extends Component {
     return (
       <Container>
         <GlobalStyle />
-        <MemoApp />
+        <Top />
       </Container>
     );
   }

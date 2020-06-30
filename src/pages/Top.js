@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import Memo from '../molecules/Memo';
-import AddForm from '../molecules/AddForm';
-import FindForm from '../molecules/FindForm';
-import HistoryForm from '../molecules/HistoryForm';
-import { colors } from '../../styles/variable';
+import Memo from '../containers/Memo';
+import AddForm from '../containers/AddForm';
+import FindForm from '../containers/FindForm';
+import HistoryForm from '../containers/HistoryForm';
+import { colors } from '../styles/variable';
 
 const Container = styled.div`
   background: ${colors.main};
@@ -17,7 +17,7 @@ const Title = styled.h1`
 `;
 
 const SubTitle = styled.p`
-  font-size: 15px;
+  font-size: 14px;
   margin-bottom: 30px;
 `;
 
@@ -26,11 +26,11 @@ const Table = styled.table`
   }
 `;
 
-const MemoApp = () => {
+const Top = () => {
   return (
     <Container>
       <Title>Redux Memo</Title>
-      <SubTitle>This App for studying Redux-Persist</SubTitle>
+      <SubTitle>This App is to study Redux</SubTitle>
       <AddForm />
       <Table>
         <tbody>
@@ -49,4 +49,4 @@ const MemoApp = () => {
   );
 };
 
-export default MemoApp;
+export default Top;

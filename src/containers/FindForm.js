@@ -1,35 +1,33 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
-import { addMemo } from '../../store/Store';
-import { colors, shadow } from '../../styles/variable';
-import { device } from '../../styles/index';
-
-const Container = styled.div``;
+import { findMemo } from '../actions/index';
+import { shadow } from '../styles/variable';
+import { device } from '../styles/index';
 
 const Form = styled.form``;
 
 const Input = styled.input`
-  width: 330px;
+  width: 100px;
   height: 35px;
   font-size: 16px;
   padding: 10px 15px;
   margin: 5px 0;
+  margin-left: 20px;
   box-shadow: ${shadow.concave};
   transition: 0.5s;
   &:focus {
     box-shadow: ${shadow.focus_concave};
   }
   @media ${device.mobile} {
-    width: 60%;
+    width: 90px;
+    margin-left: 10px;
   }
 `;
 
 const Btn = styled.input`
   width: 80px;
   height: 30px;
-  color: white;
-  background: ${colors.primary};
   font-size: 14px;
   padding: 2px 10px;
   margin-left: 15px;
@@ -38,48 +36,46 @@ const Btn = styled.input`
     box-shadow: ${shadow.concave};
     transform: scale(0.99, 0.99);
   }
+  @media ${device.mobile} {
+    width: 50px;
+  }
 `;
 
-class AddForm extends Component {
+class FindForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      message: '',
+      find: '',
     };
+
     this.doChange = this.doChange.bind(this);
     this.doAction = this.doAction.bind(this);
   }
 
   doChange(e) {
     this.setState({
-      message: e.target.value,
+      find: e.target.value,
     });
   }
 
   doAction(e) {
     e.preventDefault();
-    let action = addMemo(this.state.message);
+    let action = findMemo(this.state.find);
     this.props.dispatch(action);
-    this.setState({
-      message: '',
-    });
   }
 
   render() {
     return (
-      <Container>
-        <Form onSubmit={this.doAction}>
-          <Input
-            type='text'
-            onChange={this.doChange}
-            value={this.state.message}
-            required
-          />
-          <Btn type='submit' value='Add' />
-        </Form>
-      </Container>
+      <Form onSubmit={this.doAction}>
+        <Input
+          type='text'
+          onChange={this.doChange}
+          value={this.state.message}
+        />
+        <Btn type='submit' value='Find' />
+      </Form>
     );
   }
 }
 
-export default connect((state) => state)(AddForm);
+export default connect((state) => state)(FindForm);

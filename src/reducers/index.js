@@ -1,21 +1,26 @@
 import { createStore } from 'redux';
+import dayjs from 'dayjs';
 
 const initData = {
   data: [],
-  message: 'please type message:',
+  message: 'Please type message',
   mode: 'default',
   fdata: [],
 };
 
 // Reducer
 
-export const memoReducer = (state = initData, action) => {
+export const ADD = 'ADD';
+export const DELETE = 'DELETE';
+export const FIND = 'FIND';
+
+export const Reducer = (state = initData, action) => {
   switch (action.type) {
-    case 'ADD':
+    case ADD:
       return addReduce(state, action);
-    case 'DELETE':
+    case DELETE:
       return deleteReduce(state, action);
-    case 'FIND':
+    case FIND:
       return findReduce(state, action);
     default:
       return state;
@@ -25,27 +30,14 @@ export const memoReducer = (state = initData, action) => {
 // Reduce Action
 
 const addReduce = (state, action) => {
-  let d = new Date();
-  let f =
-    d.getMonth() +
-    1 +
-    '/' +
-    d.getDate() +
-    ' ' +
-    d.getHours() +
-    ':' +
-    d.getMinutes();
-
-  let data = {
+  const createdAt = dayjs().format('MM/DD h:mm');
+  const data = {
     message: action.message,
-    created: f,
+    created: createdAt,
   };
 
-  let _newdata = state.data.slice();
-  let newdata = [..._newdata, data];
-
   return {
-    data: newdata,
+    data: [...state.data, data],
     message: `Added "${data.message}"`,
     mode: 'default',
     fdata: [],
@@ -63,7 +55,7 @@ const findReduce = (state, action) => {
 
   return {
     data: state.data,
-    message: 'find "' + f + '"',
+    message: 'Find "' + f + '"',
     mode: 'find',
     fdata: fdata,
   };
@@ -74,34 +66,10 @@ const deleteReduce = (state, action) => {
   let newdata = _newdata.filter((x) => x !== _newdata[action.index]);
   return {
     data: newdata,
-    message: `deleted "${action.message}"`,
+    message: `Deleted "${action.message}"`,
     mode: 'delete',
     fdata: [],
   };
 };
 
-// Action Creater
-
-export const addMemo = (text) => {
-  return {
-    type: 'ADD',
-    message: text,
-  };
-};
-
-export const deleteMemo = (text, num) => {
-  return {
-    type: 'DELETE',
-    message: text,
-    index: num,
-  };
-};
-
-export const findMemo = (text) => {
-  return {
-    type: 'FIND',
-    find: text,
-  };
-};
-
-export default createStore(memoReducer);
+export default createStore(Reducer);
