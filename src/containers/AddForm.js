@@ -46,24 +46,22 @@ class AddForm extends Component {
     this.state = {
       message: '',
     };
-    this.doChange = this.doChange.bind(this);
-    this.doAction = this.doAction.bind(this);
   }
 
-  doChange(e) {
+  doChange = (e) => {
     this.setState({
       message: e.target.value,
     });
-  }
+  };
 
-  doAction(e) {
+  doAction = (e) => {
     e.preventDefault();
     let action = addMemo(this.state.message);
     this.props.dispatch(action);
     this.setState({
       message: '',
     });
-  }
+  };
 
   render() {
     return (
