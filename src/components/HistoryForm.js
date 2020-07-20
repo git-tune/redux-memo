@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { device } from '../styles/index';
@@ -12,21 +12,12 @@ const History = styled.p`
   }
 `;
 
-class HistoryForm extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      message: '',
-    };
-  }
-
-  render() {
-    return (
-      <Container>
-        <History>{this.props.message}</History>
-      </Container>
-    );
-  }
-}
+const HistoryForm = (props) => {
+  return (
+    <Container>
+      <History>{props.message}</History>
+    </Container>
+  );
+};
 
 export default connect((state) => state)(HistoryForm);

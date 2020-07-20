@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { colors, shadow } from '../styles/variable';
@@ -56,35 +56,23 @@ const Btn = styled.a`
   }
 `;
 
-class Item extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      number: 0,
-    };
-    this.doAction = this.doAction.bind(this);
-  }
-
-  doAction(e) {
+const Item = (props) => {
+  const doAction = (e) => {
     e.preventDefault();
-    let action = deleteMemo(this.props.value.message, this.props.index);
-    this.props.dispatch(action);
-    this.setState({
-      number: 0,
-    });
-  }
-  render() {
-    return (
-      <Tr>
-        <Th>No. {this.props.index}</Th>
-        <MessageTd>{this.props.value.message}</MessageTd>
-        <DayTd>{this.props.value.created}</DayTd>
-        <BtnTd>
-          <Btn onClick={this.doAction}>Del</Btn>
-        </BtnTd>
-      </Tr>
-    );
-  }
-}
+    let action = deleteMemo(props.value.message, props.index);
+    props.dispatch(action);
+  };
+
+  return (
+    <Tr>
+      <Th>No. {props.index}</Th>
+      <MessageTd>{props.value.message}</MessageTd>
+      <DayTd>{props.value.created}</DayTd>
+      <BtnTd>
+        <Btn onClick={doAction}>Del</Btn>
+      </BtnTd>
+    </Tr>
+  );
+};
 
 export default connect()(Item);

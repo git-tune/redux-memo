@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { addMemo } from '../actions/index';
@@ -40,44 +40,28 @@ const Btn = styled.input`
   }
 `;
 
-class AddForm extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      message: '',
-    };
-  }
+const AddForm = (props) => {
+  let [message, setMessage] = useState('');
 
-  doChange = (e) => {
-    this.setState({
-      message: e.target.value,
-    });
+  const doChange = (e) => {
+    setMessage((message = e.target.value));
   };
 
-  doAction = (e) => {
+  const doAction = (e) => {
     e.preventDefault();
-    let action = addMemo(this.state.message);
-    this.props.dispatch(action);
-    this.setState({
-      message: '',
-    });
+    let action = addMemo(message);
+    props.dispatch(action);
+    setMessage((message = ''));
   };
 
-  render() {
-    return (
-      <Container>
-        <Form onSubmit={this.doAction}>
-          <Input
-            type='text'
-            onChange={this.doChange}
-            value={this.state.message}
-            required
-          />
-          <Btn type='submit' value='Add' />
-        </Form>
-      </Container>
-    );
-  }
-}
+  return (
+    <Container>
+      <Form onSubmit={doAction}>
+        <Input type='text' onChange={doChange} value={message} required />
+        <Btn type='submit' value='Add' />
+      </Form>
+    </Container>
+  );
+};
 
 export default connect((state) => state)(AddForm);
