@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { findMemo } from '../actions/index';
@@ -41,41 +41,25 @@ const Btn = styled.input`
   }
 `;
 
-class FindForm extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      find: '',
-    };
+const FindForm = (props) => {
+  let [message, setMessage] = useState('');
 
-    this.doChange = this.doChange.bind(this);
-    this.doAction = this.doAction.bind(this);
-  }
+  const doChange = (e) => {
+    setMessage((message = e.target.value));
+  };
 
-  doChange(e) {
-    this.setState({
-      find: e.target.value,
-    });
-  }
-
-  doAction(e) {
+  const doAction = (e) => {
     e.preventDefault();
-    let action = findMemo(this.state.find);
-    this.props.dispatch(action);
-  }
+    let action = findMemo(message);
+    props.dispatch(action);
+  };
 
-  render() {
-    return (
-      <Form onSubmit={this.doAction}>
-        <Input
-          type='text'
-          onChange={this.doChange}
-          value={this.state.message}
-        />
-        <Btn type='submit' value='Find' />
-      </Form>
-    );
-  }
-}
+  return (
+    <Form onSubmit={doAction}>
+      <Input type='text' onChange={doChange} value={message} />
+      <Btn type='submit' value='Find' />
+    </Form>
+  );
+};
 
 export default connect((state) => state)(FindForm);
