@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import Memo from '../containers/Memo';
-import AddForm from '../containers/AddForm';
-import FindForm from '../containers/FindForm';
-import HistoryForm from '../containers/HistoryForm';
+import Memo from '../components/Memo';
+import AddForm from '../components/AddForm';
+import FindForm from '../components/FindForm';
+import HistoryForm from '../components/HistoryForm';
 import { colors } from '../styles/variable';
 
 const Container = styled.div`
