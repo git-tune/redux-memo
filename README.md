@@ -1,5 +1,6 @@
 # 概要
-Reduxで一覧表示、追加、削除、検索といった基本的な機能を実装したTodoList
+Reduxで一覧表示、追加、削除、検索といった基本的な機能を実装したTodoList  
+https://git-tune.github.io/redux-memo/
 
 # 説明
 * Functional Component中心のReact開発  
