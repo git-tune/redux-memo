@@ -29,8 +29,8 @@ const Table = styled.table`
 const Top = () => {
   return (
     <Container>
-      <Title>Redux Memo</Title>
-      <SubTitle>This App is to study Redux</SubTitle>
+      <Title>Redux TodoList</Title>
+      <SubTitle>This app enables data persistence by Redux-Persist</SubTitle>
       <AddForm />
       <Table>
         <tbody>
