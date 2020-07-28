@@ -8,3 +8,12 @@ https://git-tune.github.io/redux-memo/
 * styled-componentを用いたスタイリング手法(レスポンシブ対応)  
 * 静的解析ツールのEslint + Prettierの導入  
 * Redux Persistによるデータの永続化(ローカルストレージに保存)
+
+# 参考  
+Reduxについて
+* [Redux.js公式](https://redux.js.org/introduction/getting-started)  
+* [Redux入門【ダイジェスト版】10分で理解するReduxの基礎]](https://qiita.com/kitagawamac/items/49a1f03445b19cf407b7)  
+* [Redux 入門 〜Reduxの基礎を理解する〜](https://qiita.com/soarflat/items/bd319695d156654bbe86)  
+
+Redux Persistについて  
+* [Storeの永続化にredux-persistを使う](https://qiita.com/yasuhiro-yamada/items/bd86d7c9f35ebb1c1e7c)
